@@ -1,9 +1,10 @@
+import sys
 """ My Py Strong Password Maker.
 If you are familar with python, please skip to the bottom to "grab and go" the needed code.
 Comments and exmples are intended for people less familar.
 
 This file contains a blank template.
-An exmaple template with instructions. 
+An exmaple template with instructions.
 And finally in the only uncommented space is the actual code.
 """
 
@@ -16,10 +17,10 @@ amount of times --
 
 items = ("", "", "", "", "", "", "", "", "", "",)
 
-a = input("What numbers do you want to use?")
-b = input("Second number?")
-c = input("Third number?")
-print (items[int(a)] + items[int(b)] + items[int(c)]) 
+a = int(input("What numbers do you want to use? "))
+b = int(input("Second number "))
+c = int(input("Third number "))
+print (items[a] + items[b] + items[c])
 
 -- Also remove these quotes to use  >>>"""
 
@@ -28,11 +29,11 @@ called eggedspam.dotcom
 
 items = ("Vb@", "1X", "A8n", "x9*", "c!k", "b99", "hbOr", "kLm", "a#4", "h2",)
 
-a = input("First number you want to use?") = 5
-b = input("Second number?") = 7
-c = input("Third number?") = 9
+a = int(input("First number you want to use? ")) = 5
+b = int(input("Second number ")) = 7
+c = int(input("Third number ")) = 9
 
-print (items[int(a)] + items[int(b)] + items[int(c)]) 
+print (items[a] + items[b] + items[c])
 
 
 Your password for eggedspam.dotcom is b99h2kLm
@@ -43,23 +44,24 @@ the actual password or saving it to a file.
 """
 
 
-
-items = ("x3#1c", "b7^X4", "jM88k", "c2^vB", "l!19d", "hB7&n", "v4$Ka",
- "mIkL7", "i8N4a", "vVb8&",)
+items = (
+    "x3#1c", "b7^X4", "jM88k", "c2^vB", "l!19d", "hB7&n", "v4$Ka",
+    "mIkL7", "i8N4a", "vVb8&",
+)
 
 while True:
-    choiceA = input("Would you want to access a random password: (Y/N) ")
-    if choiceA == "Y" or choiceA == "y":
-        print ("Enter your 3 Digit pin: ")
-        a = input("First number you want to use?: ")
-        b = input("Second number you want to use?: ")
-        c = input("Third number you want to use?: ")
-        try: 
-            print (items[int(a)] + items[int(b)] + items[int(c)]) 
+    choiceA = input("Would you want to access a random password: (Y/N) ").upper()
+    if choiceA == "Y":
+        print("Enter your 3 Digit pin: ")
+        a = int(input("First number you want to use?: "))
+        b = int(input("Second number you want to use?: "))
+        c = int(input("Third number you want to use?: "))
+        try:
+            print(items[a] + items[b] + items[c])
         except IndexError:
-            print ("Values can only be from 0 through 9! Please try again")
-    elif choiceA == "N" or choiceA == "n":
-        print("Shutting down......")
+            print("Values can only be from 0 through 9! Please try again")
+    elif choiceA == "N":
+        print("Shutting down...")
         sys.exit()
 
 
